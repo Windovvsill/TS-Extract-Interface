@@ -1,4 +1,4 @@
-# project-colors README
+# Typescript Extract Interface
 
 Add some colors.
 
