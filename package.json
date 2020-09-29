@@ -1,0 +1,62 @@
+{
+    "name": "extract-interface",
+    "displayName": "Extract Interface",
+    "description": "Add some color to vscode instances to tell them apart",
+    "version": "0.0.1",
+    "publisher": "windowsill",
+    "engines": {
+        "vscode": "^1.27.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.extractInterface"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.extractInterface",
+                "title": "Extract TS Interface"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "extension.extractInterface",
+                    "group": "extractInterface"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test",
+        "package": "vsce package",
+        "howToInstall": "echo 'Run package, Select Extensions, Open More Action menu (ellipsis on the top) and click Install from VSIX..., Locate VSIX file and select, Then run Set Project Colors from command palette'",
+        "start": "sirv public",
+        "svelte-build": "rollup -c",
+        "svelte-dev": "rollup -c -w"
+    },
+    "dependencies": {
+        "sirv-cli": "^1.0.6"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^15.1.0",
+        "@rollup/plugin-node-resolve": "^9.0.0",
+        "rollup": "^2.28.1",
+        "rollup-plugin-livereload": "^2.0.0",
+        "rollup-plugin-svelte": "^6.0.1",
+        "rollup-plugin-terser": "^7.0.2",
+        "svelte": "^3.26.0",
+        "typescript": "^4.0.3",
+        "vscode": "^1.1.37",
+        "tslint": "^6.1.3",
+        "@types/node": "^14.11.2",
+        "@types/mocha": "^8.0.3"
+    }
+}
